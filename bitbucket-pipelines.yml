@@ -1,0 +1,14 @@
+image: atlassian/default-image:2
+
+pipelines:
+  default:
+    - step:
+        name: Build and Deploy
+        caches:
+          - node
+        script:
+          - echo "Cloning the repository"
+          - git clone https://SakthiEntrans@bitbucket.org/shoppyist/optimizedcvui.git
+          - echo "Deploying to EC2"
+          - scp -r * ec2-user@13.233.159.87:/path/to/deploy
+          - ssh ec2-user@13.233.159.87 "cd /path/to/deploy && ./deploy_script.sh"

@@ -1,0 +1,10 @@
+#!/bin/bash
+# Navigate to the application directory
+cd /home/ubuntu/optimizedcvui
+# Pull the latest changes from the repository
+git pull origin main
+# Install dependencies
+npm install
+# Restart the application (customize this based on your application's requirements)
+pm2 restart optimizedcvui
+
